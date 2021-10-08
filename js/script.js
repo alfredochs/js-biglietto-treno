@@ -8,20 +8,31 @@
 
 
 
-const numeroKm = prompt("Quanti km vuoi percorrere oggi?")
 const etaPassegero = prompt("Quanti anni hai?")
+const numeroKm = prompt("Quanti km vuoi percorrere oggi?")
 const prezzoBiglietto = numeroKm * 0.21
 let scontoMinorenni
 let scontoOver
 
+
+if (etaPassegero < 18) {
+    alert("Hai diritto ad uno sconto del 20%")
+} else if (etaPassegero >= 65) {
+    alert("Hai diritto d uno scondo del 40%")
+} else {
+    alert("Il prezzo del biglietto è: " + prezzoBiglietto)
+}
+
+
 if (etaPassegero < 18) {
     scontoMinorenni = (prezzoBiglietto * 20 / 100)
     const prezzoScontoMinorenni = prezzoBiglietto - scontoMinorenni
-    alert("Il prezzo del viagio è: " + (prezzoScontoMinorenni).toFixed(2))
+    alert("Il prezzo del viagio Minorenni è: " + (prezzoScontoMinorenni).toFixed(2))
 } else if (etaPassegero >= 65) {
     scontoOver = prezzoBiglietto * 40 / 100
     const prezzoScontoOver = prezzoBiglietto - scontoOver
-    alert("Il prezzo del viagio è: " + (prezzoScontoOver).toFixed(2))
-} else { }
+    alert("Il prezzo del viagio Over 65 è: " + (prezzoScontoOver).toFixed(2))
+} else {
+}
 
 
